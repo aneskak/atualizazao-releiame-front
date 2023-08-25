@@ -1,0 +1,90 @@
+a {
+    text-decoration: none;
+}
+
+* {
+    list-style: none;
+}
+
+.carrinho {
+    border: 5px solid;
+    border-image: linear-gradient(to bottom, transparent 0%, #c10000, transparent 100%) 1 100%; 
+}
+
+.traco {
+    border-bottom: 1px solid rgb(192, 192, 192);
+}
+
+.borda {
+    border: 3px solid #000 ;
+}
+
+.vermelho {
+    background-color: #000 ;
+}
+
+.tam {
+    width: auto;
+    height: 90px;
+}
+
+#qtdItem {
+    width: 9vh;
+  }
+.lixo:hover {
+    opacity: 40%;
+}
+
+.tam-card {
+    width: 39rem;
+    background-color: beige;
+}
+
+@media (max-width: 420px) {
+    .font-titulo {
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size:larger
+    }
+
+    .text-light {
+        font-size: small;
+    }
+
+    button {
+        font-size: small;
+    }
+    .m-1 {
+        width: 120px;
+    }
+    .tam-valor {
+        font-size: small;
+    }
+    .tam-nome {
+        font-size:small;
+    }
+}
+
+
+@media (max-width: 377px) {
+    .font-titulo {
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size:larger
+    }
+
+    .text-light {
+        font-size: small;
+    }
+
+    button {
+        font-size: small;
+    }
+    .m-1 {
+        width: 120px;
+    }
+}

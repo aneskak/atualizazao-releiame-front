@@ -1,0 +1,93 @@
+img {
+    width: 370px;
+    height: auto;
+}
+
+.border {
+    border: 5px solid #000
+}
+
+.filtro-badge {
+    text-decoration: none;
+}
+
+.filtro-badge:hover {
+    padding: 0.5%;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.del {
+    color: #a9a9a9;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.tam-qtd-item {
+    width: 10vh;
+
+}
+
+.comprar-qtd {
+    width: 40vh;
+}
+
+.caminhao {
+    width: 60px;
+    height: auto;
+}
+
+.frete {
+    align-items: end;
+}
+
+.tamanho_input_cep {
+    width: 39vh;
+}
+
+p {
+    text-align: justify;
+}
+
+@media (max-width: 420px) {
+    img {
+        width: 160px;
+        height: auto;
+    }
+
+    p {
+        font-size: small;
+    }
+    h4 {
+        font-size: medium;
+    }
+    h2 {
+        font-size:large;
+    }
+    .btn-danger {
+        font-size: smaller;
+    }
+}
+
+@media (max-width: 377px) {
+    img {
+        width: 160px;
+        height: auto;
+    }
+
+    p {
+        font-size: small;
+    }
+    h4 {
+        font-size: medium;
+    }
+    h2 {
+        font-size:large;
+    }
+    .btn-danger {
+        font-size: smaller;
+    }
+}

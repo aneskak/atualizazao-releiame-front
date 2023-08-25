@@ -1,0 +1,56 @@
+<div class="container-fluid">
+
+    <a routerLink="/home"><i class="fa fa-home my-3"></i></a>
+    <i class="fa fa-angle-right mx-2"></i>
+    <small>{{livro.titulo}}</small>
+    <div class="row ms-4">
+        <div class="col-md-6 my-3 border d-flex justify-content-center"><img src="{{livro.capa}}" />
+        </div>
+
+        
+        <div class="col-md-6 mt-5 mb-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-10">
+                    <h4>{{livro.titulo}}</h4>
+                    <p><strong>ISBN:</strong> {{livro.isbn}}</p>
+                    <p *ngIf="authService.logadoFuncionario()"><strong>Id:</strong> {{livro.id_livros}}</p>
+                    <p *ngIf="authService.logadoFuncionario()"><strong>Quem cadastrou:
+                        </strong>{{livro.funcionario.nome}}</p>
+                    <p><strong>Qtde. Estoque: </strong>{{livro.qtdeEstoque}}</p>
+
+                    
+                    <a [routerLink]="['/busca-etiqueta', livro.etiqueta.id_etiqueta]"
+                        class="badge bg-success text-white filtro-badge mx-1">{{livro.etiqueta.nome}}</a>
+                    <div class="my-4">
+                        <h4><em><small><del *ngIf="authService.logadoFuncionario() == false"
+                                        class="del">{{livro.valorUnitario*2 | currency :
+                                        'BRL'}}</del></small></em><strong>{{livro.valorUnitario | currency :
+                                'BRL'}}</strong>
+                        </h4>
+                    </div>
+                    <div class="d-flex justify-content-start">
+                        <a *ngIf="authService.logadoFuncionario() == false" (click)="adicionarCarrinho(livro.id_livros)"
+                            class="btn btn-danger text-light comprar-qtd">Comprar</a>
+                    </div>
+                    <div class="d-flex justify-content-start">
+                        <h1 class="text-align-center text-danger"
+                            *ngIf="authService.logadoFuncionario() && livro.qtdeEstoque<=0">LIVRO SEM ESTOQUE</h1>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container pt-3">
+    <h2>Descrição</h2>
+    <p>{{livro.descricao}}</p>
+    <h4 class="py-4">Mais Informações </h4>
+    <p>Autor(a): {{livro.autor}}</p>
+    <p>Qtde. Estoque: {{livro.qtdeEstoque}}</p>
+    <p>ISBN: {{livro.isbn}}</p>
+    <p>Tags: <a [routerLink]="['/busca-etiqueta', livro.etiqueta.id_etiqueta]"
+            class="badge bg-success text-white filtro-badge mx-1">{{livro.etiqueta.nome}}</a></p>
+</div>

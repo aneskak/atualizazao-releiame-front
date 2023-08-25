@@ -1,0 +1,59 @@
+<div class="container">
+    <!--menu-->
+    <div class="nav justify-content-evenly h5 py-3 traco">
+        <div class="nav-item">
+            <ul class="nav-link text-center carrinho" aria-current="page" href="#">
+                <a routerLink="#">
+                    <li><img src="../../../../assets/img/carrinho_preto.png" /></li>
+                    <li class="font-titulo text-dark">Carrinho</li>
+                </a>
+            </ul>
+        </div>
+        <div class="nav-item opacity-25 text-center">
+            <ul class="nav-link text-dark">
+                <li><img src="../../../../assets/img/caminhao-bau.png" /></li>
+                <li class="font-titulo">Entrega</li>
+            </ul>
+        </div>
+        <div class="nav-item opacity-25 text-center">
+            <ul class="nav-link text-dark">
+                <li><img src="../../../../assets/img/conta.png" /></li>
+                <li class="font-titulo">Finalização</li>
+            </ul>
+        </div>
+    </div>
+    <!--conteúdo-->
+    <div class="d-flex justify-content-center">
+        <h2 class="my-4">Meu Carrinho</h2>
+    </div>
+
+
+    <table class="table table-borderless borda align-middle">
+        <thead class="vermelho text-light">
+            <tr>
+                <th scope="col">Produto(s)</th>
+                <th scope="col">Valor do Produto</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Remover</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let livro of listaLivros">
+                <th class="d-flex align-items-center">
+                    <img class="img-thumbnail tam me-4" src={{livro.capa}} />
+                </th>
+                <td class="tam-valor">{{livro.valorUnitario | currency : 'BRL'}}</td>
+                <td class="tam-nome">{{livro.titulo}}</td>
+                <td><a (click)="removerLivro(livro)"><img src="../../../../assets/img/lata-de-lixo.png" /></a>
+                </td>
+            </tr>
+            <th>
+                <button class="btn btn-sm btn-outline-secondary m-1" routerLink="/home">Adicionar mais itens ao
+                    carrinho</button>
+            </th>
+        </tbody>
+    </table>
+    <div class="pb-2 d-flex justify-content-end">
+        <button class="btn btn-success btn-lg" (click)="entrega()">Entrega</button> 
+    </div>
+</div>

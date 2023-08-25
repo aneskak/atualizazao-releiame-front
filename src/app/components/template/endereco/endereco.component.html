@@ -1,0 +1,122 @@
+
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center text-secondary">Adicionar Endereço</h1>
+    </div>
+  </div>
+
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="titulo">Cidade</label>
+        <input
+          [(ngModel)]="endereco.cidade"
+          type="text"
+          class="form-control"
+          id="cidade"
+          placeholder="Digite a cidade"
+        />
+      </div>
+      <div class="form-group">
+        <label for="texto">Bairro</label>
+        <input
+          [(ngModel)]="endereco.bairro"
+          type="text"
+          class="form-control"
+          id="bairro"
+          placeholder="Digite o bairro"
+        />
+      </div>
+      <div class="form-group">
+        <label for="titulo">CEP</label>
+        <input
+          [(ngModel)]="endereco.cep"
+          type="text"
+          class="form-control"
+          id="cep"
+          placeholder="Digite o cep"
+        />
+      </div>
+      <div class="form-group">
+        <label for="titulo">Rua</label>
+        <input
+          [(ngModel)]="endereco.rua"
+          type="text"
+          class="form-control"
+          id="rua"
+          placeholder="Digite a rua"
+        />
+      </div>
+      <div class="form-group">
+        <label for="titulo">Número</label>
+        <input
+          [(ngModel)]="endereco.numero"
+          type="number"
+          class="form-control"
+          id="numero"
+          placeholder="Digite o número"
+        />
+      </div>
+      <div class="form-group">
+        <label for="titulo">Complemento</label>
+        <input
+          [(ngModel)]="endereco.complemento"
+          type="text"
+          class="form-control"
+          id="complemento"
+          placeholder="Digite o complemento"
+        />
+      </div>
+      <div class="form-group">
+        <label for="titulo">Nome</label>
+        <input
+          [(ngModel)]="endereco.nome_endereco"
+          type="text"
+          class="form-control"
+          id="nome"
+          placeholder="Digite o nome que você quer dar para o endereço"
+        />
+      </div>
+      <div class="d-flex justify-content-center mt-3">
+        <button class="btn btn-danger mr-4" routerLink="/home">
+          Voltar para Home
+        </button>
+        <button class="btn btn-success" (click)="adicionar()">Cadastrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="nav justify-content-center">
+  <h5>MEUS ENDEREÇOS</h5>
+</div>
+<table class="table">
+  <thead>
+    <tr class="bg-success text-light">
+      <th scope="col">Nome</th>
+      <th scope="col">Cidade</th>
+      <th scope="col">Bairro</th>
+      <th scope="col">Rua</th>
+      <th scope="col">CEP</th>
+      <th scope="col">Número</th>
+      <th scope="col">Complemento</th>
+      <th scope="col">Apagar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let item of listaEndereco">
+      <tr *ngIf="item.cliente.id_cliente == idCliente">
+        <td>{{item.nome_endereco}}</td>
+        <td>{{ item.cidade }}</td>
+        <td>{{ item.bairro }}</td>
+        <td>{{ item.rua }}</td>
+        <td>{{ item.cep }}</td>
+        <td>{{ item.numero }}</td>
+        <td>{{ item.complemento }}</td>
+        <td>
+          <a class="btn btn-danger" (click)="apagar(item.id_endereco)">Apagar</a>
+        </td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
